@@ -1,0 +1,52 @@
+/*
+02_variables.scss
+here's the file to setup for customization
+dependencies: none
+*/
+
+// theme
+$ccss-primary-color: #b8336a !default;
+$ccss-secondary-color: #2e5266 !default;
+$ccss-tertiary-color: #8d99ae !default;
+$ccss-success-color: #4caf50 !default;
+$ccss-warning-color: #ffeb3b !default;
+$ccss-error-color: #f44336 !default;
+$ccss-link-color: #039be5 !default;
+$ccss-text-color: rgba(0, 0, 0, 0.87) !default;
+
+// typography
+$ccss-type-scale-ratio: 1.333 !default;
+$ccss-text-mobile-size: 14px !default;
+$ccss-text-tablet-size: 15px !default;
+$ccss-text-laptop-size: 16px !default;
+$ccss-body-line-height: 1.75 !default;
+$ccss-heading-line-height: 1.15 !default;
+$ccss-font-primary-stack: "Montserrat", "Helvetica Neue", sans-serif !default;
+$ccss-font-secondary-stack: "Montserrat", "serif" !default;
+
+// breakpoints (materialize)
+$ccss-mobile-screen-max-width: 600px;
+$ccss-tablet-screen-max-width: 992px;
+$ccss-laptop-screen-max-width: 1200px;
+$ccss-large-screen-max-width: 1440px;
+
+// breakpoints (vuetify)
+// $ccss-mobile-screen-max-width: 600px;
+// $ccss-tablet-screen-max-width: 960px;
+// $ccss-laptop-screen-max-width: 1264px;
+// $ccss-large-screen-max-width: 1904px;
+
+// container
+$ccss-container-max-width: 1440px !default;
+$ccss-container-padding: 0 1rem !default;
+
+// navbar
+$ccss-navbar-min-height: 64px;
+$ccss-navbar-max-height: 80px;
+
+// buttons
+$ccss-btn-background: $ccss-primary-color !default;
+$ccss-btn-font-style: capitalize !default;
+$ccss-btn-font-weight: 500 !default;
+$ccss-btn-border-radius: 2px !default;
+$ccss-btn-letter-spacing: 0px !default;

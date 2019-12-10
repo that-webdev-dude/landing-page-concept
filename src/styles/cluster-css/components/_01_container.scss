@@ -1,0 +1,31 @@
+/*
+component: 01_container.scss
+all about containers and wrappers
+dependencies: variables
+*/
+
+.container,
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding: $ccss-container-padding;
+  max-width: $ccss-container-max-width;
+
+  &.fluid {
+    width: 100%;
+  }
+}
+
+// FIXME
+// review this one
+// do you need this component at all
+.textbox {
+  padding: 2em 1em;
+  border-radius: 4px;
+  background-color: transparent;
+
+  @include ccss-on-tablet-and-up {
+    padding: 3em 2em;
+  }
+}

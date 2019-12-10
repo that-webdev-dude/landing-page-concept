@@ -37,5 +37,8 @@
     "> 1%",
     "Firefox ESR",
     "Opera 12.1"
-  ]
+  ],
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
+  }
 }

@@ -1,0 +1,39 @@
+// html
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// links
+a {
+  &:link,
+  &:visited {
+    -webkit-tap-highlight-color: transparent;
+    color: $ccss-link-color;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  &:hover,
+  &:active {
+    color: darken($ccss-link-color, 10);
+  }
+}
+
+// blockquote
+blockquote {
+  margin: 1em 0;
+  padding-left: 2em;
+  border-left: solid 4px $ccss-primary-color;
+}
+
+// icons
+.material-icons,
+i.material-icons {
+  font-size: 24px;
+  padding: 0.5rem;
+}

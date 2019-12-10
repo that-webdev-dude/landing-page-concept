@@ -1,0 +1,55 @@
+/*
+module: 01_typography.scss
+base typography rules and helpers
+dependencies: 
+  - core/02_variables
+  - core/03_functions
+  - core/04_mixins
+*/
+
+html {
+  font-size: $ccss-text-mobile-size;
+}
+
+body {
+  color: $ccss-text-color;
+  line-height: $ccss-body-line-height;
+  font-family: $ccss-font-primary-stack;
+}
+
+p {
+  margin-bottom: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2.75rem 0 1rem;
+  line-height: $ccss-heading-line-height;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+@include ccss-typescale($ccss-text-mobile-size, $ccss-type-scale-ratio);
+
+// scale up on tablets
+@include ccss-on-tablet-and-up {
+  $-base-size: $ccss-text-tablet-size;
+  html {
+    font-size: $-base-size;
+  }
+  @include ccss-typescale($-base-size, $ccss-type-scale-ratio);
+}
+
+// scale up on laptops
+@include ccss-on-laptop-and-up {
+  $-base-size: $ccss-text-laptop-size;
+  html {
+    font-size: $-base-size;
+  }
+  @include ccss-typescale($-base-size, $ccss-type-scale-ratio);
+}

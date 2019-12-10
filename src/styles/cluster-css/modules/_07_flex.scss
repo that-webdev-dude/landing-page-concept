@@ -1,0 +1,85 @@
+/*
+module: 07_flex.scss
+the full flexbox set of rules
+dependencies: none
+*/
+
+.d-flex,
+.d-inline-flex {
+  $-flex-directions: row, column, row-reverse, column-reverse;
+  @each $-value in $-flex-directions {
+    &.flex-#{$-value} {
+      flex-direction: $-value;
+    }
+  }
+
+  $-flex-justify-values: (
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "space-between": space-between,
+    "space-around": space-around
+  );
+  @each $-name, $-value in $-flex-justify-values {
+    &.justify-#{$-name} {
+      justify-content: $-value;
+    }
+  }
+
+  $-flex-align-values: (
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "baseline": baseline,
+    "stretch": stretch
+  );
+  @each $-name, $-value in $-flex-align-values {
+    &.align-#{$-name} {
+      align-items: $-value;
+    }
+
+    .align-self-#{$-name} {
+      align-self: $-value;
+    }
+  }
+
+  $-flex-align-content-values: (
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "space-between": space-between,
+    "space-around": space-around,
+    "stretch": stretch
+  );
+  @each $-name, $-value in $-flex-align-content-values {
+    &.align-content-#{$-name} {
+      align-content: $-value;
+    }
+  }
+
+  $-flex-wrap-values: (
+    "wrap": wrap,
+    "nowrap": nowrap,
+    "wrap-reverse": wrap-reverse
+  );
+  @each $-name, $-value in $-flex-wrap-values {
+    &.flex-#{$-name} {
+      flex-wrap: $-value;
+    }
+  }
+
+  @for $-order from 0 to 13 {
+    &.flex-order-#{$-order} {
+      order: $-order;
+    }
+  }
+
+  @for $-index from 0 to 2 {
+    .flex-grow-#{$-index} {
+      flex-grow: $-index;
+    }
+    .flex-shrink-#{$-index} {
+      flex-shrink: $-index;
+    }
+  }
+}

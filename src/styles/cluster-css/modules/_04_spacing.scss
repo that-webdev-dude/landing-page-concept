@@ -1,0 +1,82 @@
+/*
+module: 04_spacing.scss
+all rules and helpers
+for handling the spacing between elements
+using paddings and margins
+dependencies: none
+*/
+
+// all
+@for $-space from 0 to 7 {
+  .ma-#{$-space} {
+    margin: #{$-space}rem;
+  }
+  .pa-#{$-space} {
+    padding: #{$-space}rem;
+  }
+}
+
+// left and right
+@for $-space from 0 to 7 {
+  .mx-#{$-space} {
+    margin-left: #{$-space}rem;
+    margin-right: #{$-space}rem;
+  }
+  .px-#{$-space} {
+    padding-left: #{$-space}rem;
+    padding-right: #{$-space}rem;
+  }
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+.px-auto {
+  padding: 0 auto;
+}
+
+// top and bottom
+@for $-space from 0 to 7 {
+  .my-#{$-space} {
+    margin-top: #{$-space}rem;
+    margin-bottom: #{$-space}rem;
+  }
+  .py-#{$-space} {
+    padding-top: #{$-space}rem;
+    padding-bottom: #{$-space}rem;
+  }
+}
+
+.my-auto {
+  margin: auto 0;
+}
+.py-auto {
+  padding: auto 0;
+}
+
+// top right bottom left
+$-space-values: (
+  "t": top,
+  "r": right,
+  "b": bottom,
+  "l": left
+);
+@for $-space from 0 to 7 {
+  @each $-name, $-value in $-space-values {
+    .m#{$-name}-#{$-space} {
+      margin-#{$-value}: #{$-space}rem;
+    }
+    .p#{$-name}-#{$-space} {
+      padding-#{$-value}: #{$-space}rem;
+    }
+  }
+}
+
+@each $-name, $-value in $-space-values {
+  .m#{$-name}-auto {
+    margin-#{$-value}: auto;
+  }
+  .p#{$-name}-auto {
+    padding-#{$-value}: auto;
+  }
+}

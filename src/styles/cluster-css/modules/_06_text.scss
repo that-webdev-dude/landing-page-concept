@@ -1,0 +1,49 @@
+/*
+module: 06_text.scss
+a set of hepers to handle
+the text style, weight, alignement
+and direction
+dependencies: none
+*/
+
+// styles
+$-text-transforms: uppercase, lowercase, capitalize;
+@each $-transform in $-text-transforms {
+  .text-style-#{$-transform} {
+    text-transform: $-transform;
+  }
+}
+
+// weight
+$-text-weights: (
+  "thin": 100,
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900
+);
+@each $-name, $-weight in $-text-weights {
+  .text-weight-#{$-name} {
+    font-weight: $-weight;
+  }
+}
+
+// alignement
+$text-positions: left, center, right;
+@each $position in $text-positions {
+  .text-align-#{$position} {
+    text-align: #{$position};
+  }
+}
+
+// direction
+.text-direction-vertical {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  vertical-align: bottom;
+  margin: 0;
+}

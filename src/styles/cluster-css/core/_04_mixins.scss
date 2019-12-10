@@ -1,0 +1,182 @@
+/*
+04_mixins.scss
+mixins available throughout
+the environment
+dependencies: ./functions
+*/
+
+// typography - typescale
+@mixin ccss-typescale($base-size, $ratio) {
+  h1,
+  .display-1 {
+    font-size: $base-size * ccss-pow($ratio, 5);
+  }
+
+  h2,
+  .display-2 {
+    font-size: $base-size * ccss-pow($ratio, 4);
+  }
+
+  h3,
+  .display-3 {
+    font-size: $base-size * ccss-pow($ratio, 3);
+  }
+
+  h4,
+  .display-4 {
+    font-size: $base-size * ccss-pow($ratio, 2);
+  }
+
+  h5,
+  .display-5 {
+    font-size: $base-size * ccss-pow($ratio, 1);
+  }
+
+  small,
+  .small,
+  .text-small,
+  .display-small {
+    font-size: $base-size / ccss-pow($ratio, 1);
+  }
+}
+
+// media queries
+@mixin ccss-on-tablet-and-up {
+  @media only screen and (min-width: ($ccss-mobile-screen-max-width + 1px)) {
+    @content;
+  }
+}
+
+@mixin ccss-on-laptop-and-up {
+  @media only screen and (min-width: ($ccss-tablet-screen-max-width + 1px)) {
+    @content;
+  }
+}
+
+@mixin ccss-on-large-screen-and-up {
+  @media only screen and (min-width: ($ccss-laptop-screen-max-width + 1px)) {
+    @content;
+  }
+}
+
+@mixin ccss-on-xlarge-screen-and-up {
+  @media only screen and (min-width: ($ccss-large-screen-max-width + 1px)) {
+    @content;
+  }
+}
+
+@mixin ccss-on-tablet-only {
+  @media only screen and (min-width: ($ccss-mobile-screen-max-width + 1px)) and (max-width: $ccss-tablet-screen-max-width) {
+    @content;
+  }
+}
+
+@mixin ccss-on-laptop-only {
+  @media only screen and (min-width: ($ccss-tablet-screen-max-width + 1px)) and (max-width: $ccss-laptop-screen-max-width) {
+    @content;
+  }
+}
+
+@mixin ccss-on-large-screen-only {
+  @media only screen and (min-width: ($ccss-laptop-screen-max-width + 1px)) and (max-width: $ccss-large-screen-max-width) {
+    @content;
+  }
+}
+
+// theme
+@mixin ccss-shades($color-value) {
+  $shade: 10;
+  @for $index from 1 to 7 {
+    &.lighten-#{$shade} {
+      background-color: lighten($color-value, $shade) !important;
+    }
+    &.darken-#{$shade} {
+      background-color: darken($color-value, $shade) !important;
+    }
+    $shade: $shade + 5;
+  }
+}
+
+@mixin ccss-text-shades($color-value) {
+  $text-shade: 10;
+  @for $index from 1 to 7 {
+    &.text-lighten-#{$text-shade} {
+      color: lighten($color-value, $text-shade) !important;
+    }
+    &.text-darken-#{$text-shade} {
+      color: darken($color-value, $text-shade) !important;
+    }
+    $text-shade: $text-shade + 5;
+  }
+}
+
+// visibility
+@mixin visibility($-display-type) {
+  &.visible {
+    display: $-display-type;
+  }
+
+  &.visible-on-tablet-and-up {
+    @include ccss-on-tablet-and-up {
+      display: $-display-type !important;
+    }
+  }
+  &.visible-on-laptop-and-up {
+    @include ccss-on-laptop-and-up {
+      display: $-display-type !important;
+    }
+  }
+  &.visible-on-large-screen-and-up {
+    @include ccss-on-large-screen-and-up {
+      display: $-display-type !important;
+    }
+  }
+  &.visible-on-xlarge-screen-and-up {
+    @include ccss-on-xlarge-screen-and-up {
+      display: $-display-type !important;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &.hidden-on-tablet-and-up {
+    @include ccss-on-tablet-and-up {
+      display: none !important;
+    }
+  }
+  &.hidden-on-laptop-and-up {
+    @include ccss-on-laptop-and-up {
+      display: none !important;
+    }
+  }
+  &.hidden-on-large-screen-and-up {
+    @include ccss-on-large-screen-and-up {
+      display: none !important;
+    }
+  }
+  &.hidden-on-xlarge-screen-and-up {
+    @include ccss-on-xlarge-screen-and-up {
+      display: none !important;
+    }
+  }
+}
+
+// resets
+@mixin list-reset {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin button-reset {
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}

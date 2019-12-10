@@ -1,0 +1,41 @@
+/*
+module: 02_theme.scss
+color classes and helpers
+dependencies
+  - core/02_variables
+  - core/04_mixins
+*/
+
+// .{color} & .text-{color}
+$-theme-colors: (
+  "primary": $ccss-primary-color,
+  "secondary": $ccss-secondary-color,
+  "tertiary": $ccss-tertiary-color,
+  "success": $ccss-success-color,
+  "warning": $ccss-warning-color,
+  "error": $ccss-error-color
+);
+@each $-name, $-value in $-theme-colors {
+  .#{$-name} {
+    background-color: $-value !important;
+    @include ccss-shades($-value);
+  }
+  .text-#{$-name} {
+    color: $-value !important;
+    @include ccss-text-shades($-value);
+  }
+}
+
+$-common-colors: (
+  "transparent": transparent,
+  "white": #ffffff,
+  "black": #000000
+);
+@each $-name, $-value in $-common-colors {
+  .#{$-name} {
+    background-color: $-value !important;
+  }
+  .text-#{$-name} {
+    color: $-value !important;
+  }
+}

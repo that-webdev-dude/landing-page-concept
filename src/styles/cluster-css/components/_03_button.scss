@@ -1,0 +1,142 @@
+/*
+button.scss
+dependencies:
+  - _variables.scss
+classes:
+  - disabled
+  - outlined
+  - rounded
+  - raised
+  - block
+  - large
+  - text
+  - flat
+*/
+
+// FIXME
+// armonize the box shadows
+// double check on materialize
+// the tap thing
+.btn,
+a.btn,
+button.btn {
+  // shared variables
+  // FIXME
+  // a lot of variables here
+  // are unecessary
+  $-ccss-btn-color: lighten($ccss-btn-background, 100) !default;
+  $-ccss-btn-border: solid 1px transparent;
+  // FIXME
+  // the margin should be defined
+  // in a more sensible way?
+  // $-ccss-btn-margin: 0 2px 1rem !default;
+  $-ccss-btn-margin: 0 !default;
+  $-ccss-btn-padding: 1.5rem !default;
+  $-ccss-btn-min-width: 4rem !default;
+  $-ccss-btn-min-height: 3rem !default;
+  $-ccss-btn-default-hover: lighten($ccss-btn-background, 10);
+  $-ccss-btn-default-active: lighten($ccss-btn-background, 20);
+  $-ccss-btn-outlined-hover: lighten($ccss-btn-background, 50);
+  $-ccss-btn-outlined-active: lighten($ccss-btn-background, 55);
+
+  // reset
+  @include button-reset;
+
+  // default buttons
+  min-height: $-ccss-btn-min-height;
+  min-width: $-ccss-btn-min-width;
+  padding: 0 $-ccss-btn-padding;
+  margin: $-ccss-btn-margin;
+  color: $-ccss-btn-color;
+  border: $-ccss-btn-border;
+  font-weight: $ccss-btn-font-weight;
+  border-radius: $ccss-btn-border-radius;
+  letter-spacing: $ccss-btn-letter-spacing;
+  text-transform: $ccss-btn-font-style;
+  background-color: $ccss-btn-background;
+  transition: all 0.2s;
+  &:hover {
+    color: $-ccss-btn-color;
+    background-color: $-ccss-btn-default-hover;
+    &:active {
+      background-color: $-ccss-btn-default-active;
+    }
+  }
+  &.btn-disabled {
+    opacity: 40%;
+    box-shadow: none !important;
+    background-color: $ccss-btn-background !important;
+    cursor: default;
+  }
+
+  // raised buttons
+  &.btn-raised {
+    $-ccss-btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.95) !default;
+    $-ccss-btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.95) !default;
+
+    box-shadow: $-ccss-btn-static-shadow;
+
+    &:hover {
+      box-shadow: $-ccss-btn-raised-shadow;
+    }
+  }
+
+  // outlined buttons
+  &.btn-outlined {
+    box-shadow: none;
+    color: $ccss-btn-background;
+    border-color: $ccss-btn-background;
+    background-color: transparent;
+    &:hover {
+      background-color: $-ccss-btn-outlined-hover;
+      &:active {
+        background-color: $-ccss-btn-outlined-active;
+      }
+    }
+    &.btn-disabled {
+      background-color: transparent !important;
+    }
+  }
+
+  // text buttons
+  &.btn-text {
+    box-shadow: none;
+    color: $ccss-btn-background;
+    padding: 0 calc(#{$-ccss-btn-padding} / 2);
+    border-color: transparent;
+    background-color: transparent;
+    &:hover {
+      background-color: $-ccss-btn-outlined-hover;
+      &:active {
+        background-color: $-ccss-btn-outlined-active;
+      }
+    }
+    &.btn-disabled {
+      background-color: transparent !important;
+    }
+    &.btn-large {
+      padding: 0 $-ccss-btn-padding;
+    }
+  }
+
+  // large buttons
+  &.btn-large {
+    padding: 0 calc(#{$-ccss-btn-padding} * 2);
+    min-height: calc(#{$-ccss-btn-min-height} * 1.25);
+  }
+
+  // flat buttons
+  &.btn-flat {
+    box-shadow: none;
+  }
+
+  // block buttons
+  &.btn-block {
+    width: 100%;
+  }
+
+  // rounded buttons
+  &.btn-rounded {
+    border-radius: 4rem;
+  }
+}

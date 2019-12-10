@@ -1,0 +1,68 @@
+/*
+module: 03_display.scss
+all rules and helpers
+for handling the display properties
+dependencies: none
+*/
+
+// display properties
+$-display-values: (
+  "d-none": none,
+  "d-block": block,
+  "d-inline": inline,
+  "d-inline-block": inline-block,
+  "d-flex": flex,
+  "d-inline-flex": inline-flex
+);
+@each $-name, $-value in $-display-values {
+  .#{$-name} {
+    display: $-value !important;
+
+    // visibility
+    @each $-other-name, $-other-value in $-display-values {
+      @if $-other-name != $-name {
+        &.#{$-other-name}-on-tablet-and-up {
+          @include ccss-on-tablet-and-up {
+            display: $-other-value !important;
+          }
+        }
+
+        &.#{$-other-name}-on-tablet-only {
+          @include ccss-on-tablet-only {
+            display: $-other-value !important;
+          }
+        }
+
+        &.#{$-other-name}-on-laptop-and-up {
+          @include ccss-on-laptop-and-up {
+            display: $-other-value !important;
+          }
+        }
+
+        &.#{$-other-name}-on-laptop-only {
+          @include ccss-on-laptop-only {
+            display: $-other-value !important;
+          }
+        }
+
+        &.#{$-other-name}-on-large-screen-and-up {
+          @include ccss-on-large-screen-and-up {
+            display: $-other-value !important;
+          }
+        }
+
+        &.#{$-other-name}-on-large-screen-only {
+          @include ccss-on-large-screen-only {
+            display: $-other-value !important;
+          }
+        }
+
+        &.#{$-other-name}-on-xlarge-screen-and-up {
+          @include ccss-on-xlarge-screen-and-up {
+            display: $-other-value !important;
+          }
+        }
+      }
+    } // visibility end
+  }
+}
