@@ -1,1 +1,164 @@
 @import "./cluster-css/cluster";
+
+body {
+  background-color: #fff;
+  position: relative;
+}
+
+// FIXME
+// add this one to the framework
+img {
+  display: block;
+}
+
+// FIXME
+// add this one to the framework
+.container {
+  &.fluid {
+    margin: 0;
+    max-width: 100%;
+  }
+  &.fill-height {
+    height: 100%;
+  }
+}
+
+// FIXME
+// add this one to the framework
+a {
+  position: relative;
+  &.underline {
+    &::after {
+      content: "";
+      border-color: inherit;
+      border-bottom: solid 1.5px;
+      position: absolute;
+      top: 1rem;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s;
+    }
+
+    &:hover {
+      &::after {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes underline {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+// FIXME
+// add this one to the framework
+.icon {
+  cursor: pointer;
+  padding: 0.25rem;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// FIXME
+// add position helpers to the framework
+
+// header
+#header {
+  $nav-bar-height-small: 4rem;
+  $nav-bar-height-large: 12rem;
+  $header-img-height-small: 736px;
+  $header-img-height-large: 812px;
+
+  width: 100%;
+  display: block;
+
+  #header-img {
+    margin-top: $nav-bar-height-small;
+    height: $header-img-height-small;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+  @include ccss-on-tablet-and-up {
+    #header-img {
+      margin-top: $nav-bar-height-large;
+      height: $header-img-height-large;
+    }
+  }
+
+  #nav-bar {
+    width: calc(100% - 2rem);
+    height: $nav-bar-height-small;
+    display: block;
+    position: fixed;
+    top: 0;
+
+    #nav-title {
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    #nav-trigger {
+      position: absolute;
+      right: 1rem;
+    }
+
+    #nav-links {
+      @include list-reset;
+      letter-spacing: 1px;
+      display: none;
+    }
+
+    // nav-bar on tablet view
+    @include ccss-on-tablet-and-up {
+      height: $nav-bar-height-large;
+
+      #nav-title {
+        margin-bottom: 1rem;
+      }
+
+      #nav-trigger {
+        display: none;
+      }
+
+      #nav-links {
+        display: flex;
+      }
+    }
+  }
+}
+
+#nav-drawer {
+  // display: block;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: 100vw;
+  // height: 100vh;
+  // overflow: hidden;
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  overflow: hidden;
+}

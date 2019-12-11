@@ -11,7 +11,8 @@ $ccss-tertiary-color: #8d99ae !default;
 $ccss-success-color: #4caf50 !default;
 $ccss-warning-color: #ffeb3b !default;
 $ccss-error-color: #f44336 !default;
-$ccss-link-color: #039be5 !default;
+// $ccss-link-color: #039be5 !default;
+$ccss-link-color: rgba(0, 0, 0, 0.87) !default;
 $ccss-text-color: rgba(0, 0, 0, 0.87) !default;
 
 // typography
