@@ -6,14 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>--project-name--</title>
   </head>
-  <body>
+  <body id="body">
     <header id="header">
       <div class="container fluid">
-        <img id="header-img" src="https://via.placeholder.com/2500" />
+        <img id="header-img" src="https://via.placeholder.com/1024" />
         <nav id="nav-bar" class="white d-flex flex-column align-center justify-center">
           <div id="nav-title" class="display-4 text-weight-bold text-style-uppercase">myplant.com</div>
           <div id="nav-trigger" class="icon"><img src="./images/icon-hamburger.svg" alt="icon-hamburger" /></div>
-          <nav id="nav-drawer" class="primary">drawer</nav>
+          <nav id="nav-drawer" class="white">
+            <div class="container fluid fill-height primary">
+              <div class="icon"><img src="./images/icon-close.svg" alt="icon-close" /></div>
+              <div class="display-4 text-weight-bold text-style-uppercase">myplant.com</div>
+              <ul>
+                <li class="nav-link  text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">roots</a></li>
+                <li class="nav-link  text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">plants</a></li>
+                <li class="nav-link  text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">stock</a></li>
+                <li class="nav-link  text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">follow</a></li>
+              </ul>
+            </div>
+          </nav>
           <ul id="nav-links">
             <li class="nav-link text-small text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">roots</a></li>
             <li class="nav-link text-small text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">plants</a></li>
@@ -51,6 +62,24 @@
       explicabo, ab impedit omnis quis, facere ratione vel doloremque neque dolorem ut maiores eaque velit. Quisquam, saepe aspernatur. Sunt voluptas, quisquam
       repellat ducimus cupiditate, labore necessitatibus, natus quis adipisci amet mollitia!
     </section>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <script>
+      const navTrigger = document.querySelector("#nav-trigger");
+      const navDrawer = {
+        element: document.querySelector("#nav-drawer"),
+        active: false
+      };
+      navTrigger.addEventListener("click", () => {
+        navDrawer.active = !navDrawer.active;
+        const body = document.querySelector("#body");
+        if (navDrawer.active) {
+          body.classList.add("overflow-hidden");
+          navDrawer.element.classList.add("active");
+        } else {
+          body.classList.remove("overflow-hidden");
+          navDrawer.element.classList.remove("active");
+        }
+      });
+    </script>
   </body>
 </html>

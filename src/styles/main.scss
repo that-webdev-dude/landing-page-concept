@@ -4,12 +4,16 @@ body {
   background-color: #fff;
   position: relative;
   overflow: auto;
+  &.overflow-hidden {
+    overflow: hidden;
+  }
 }
 
 // FIXME
 // add this one to the framework
 img {
   display: block;
+  width: 100%;
 }
 
 // FIXME
@@ -90,9 +94,9 @@ a {
     margin-top: $nav-bar-height-small;
     height: $header-img-height-small;
     object-fit: cover;
-    width: 100%;
-    display: block;
-    overflow: auto;
+    // width: 100%;
+    // display: block;
+    // overflow: auto;
   }
   @include ccss-on-tablet-and-up {
     #header-img {
@@ -102,10 +106,9 @@ a {
   }
 
   #nav-bar {
-    width: calc(100% - 2rem);
-    height: $nav-bar-height-small;
-    display: block;
     position: fixed;
+    height: $nav-bar-height-small;
+    width: calc(100% - 2rem);
     top: 0;
 
     #nav-title {
@@ -144,12 +147,15 @@ a {
 }
 
 #nav-drawer {
-  z-index: 10;
-  display: block;
+  transition: left 0.2s;
   position: fixed;
   top: 0;
-  left: 0;
-  // width: 100vw;
-  // height: 100vh;
-  // overflow: hidden;
+  left: -90vw;
+  width: 90vw;
+  height: 100vh;
+  z-index: 10;
+
+  &.active {
+    left: 0;
+  }
 }
