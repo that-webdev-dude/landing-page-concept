@@ -8,12 +8,13 @@ dependencies: none
 $ccss-primary-color: #b8336a !default;
 $ccss-secondary-color: #2e5266 !default;
 $ccss-tertiary-color: #8d99ae !default;
+$ccss-offblack-color: rgba(0, 0, 0, 0.87) !default;
 $ccss-success-color: #4caf50 !default;
 $ccss-warning-color: #ffeb3b !default;
 $ccss-error-color: #f44336 !default;
 // $ccss-link-color: #039be5 !default;
-$ccss-link-color: rgba(0, 0, 0, 0.87) !default;
-$ccss-text-color: rgba(0, 0, 0, 0.87) !default;
+$ccss-link-color: $ccss-offblack-color !default;
+$ccss-text-color: $ccss-offblack-color !default;
 
 // typography
 $ccss-type-scale-ratio: 1.333 !default;

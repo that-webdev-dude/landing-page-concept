@@ -31,9 +31,20 @@ blockquote {
   border-left: solid 4px $ccss-primary-color;
 }
 
-// icons
-.material-icons,
-i.material-icons {
-  font-size: 24px;
-  padding: 0.5rem;
+// images && icons (use svg)
+img {
+  display: block;
+  width: 100%;
+
+  &.icon {
+    cursor: pointer;
+    padding: 0.25rem;
+    height: 32px;
+    width: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    object-position: 50% 50%;
+    object-fit: contain;
+  }
 }

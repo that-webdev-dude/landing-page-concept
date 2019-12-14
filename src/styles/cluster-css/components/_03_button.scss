@@ -137,6 +137,18 @@ button.btn {
 
   // rounded buttons
   &.btn-rounded {
-    border-radius: 4rem;
+    border-radius: $-ccss-btn-min-width;
+  }
+
+  &.btn-squared {
+    border-radius: none;
+  }
+
+  // icon buttons
+  &.btn-icon {
+    width: $-ccss-btn-min-width;
+    height: $-ccss-btn-min-width;
+    min-width: $-ccss-btn-min-width;
+    min-height: $-ccss-btn-min-width;
   }
 }
