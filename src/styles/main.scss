@@ -11,13 +11,6 @@ body {
 
 // FIXME
 // add this one to the framework
-img {
-  display: block;
-  width: 100%;
-}
-
-// FIXME
-// add this one to the framework
 .container {
   &.fluid {
     margin: 0;
@@ -67,6 +60,19 @@ a {
 
 // FIXME
 // add this one to the framework
+img {
+  display: block;
+  width: 100%;
+}
+
+svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+// FIXME
+// add this one to the framework
 .icon {
   cursor: pointer;
   padding: 0.25rem;
@@ -80,80 +86,112 @@ a {
 // FIXME
 // add position helpers to the framework
 
+// globals
+$nav-bar-height-small: 4rem;
+$nav-bar-height-large: 12rem;
+$header-height-small: 736px;
+$header-height-large: 812px;
+
 // header
 #header {
-  $nav-bar-height-small: 4rem;
-  $nav-bar-height-large: 12rem;
-  $header-img-height-small: 736px;
-  $header-img-height-large: 812px;
-
   width: 100%;
   display: block;
+  height: $header-height-small;
+  margin-top: $nav-bar-height-small;
 
   #header-img {
-    margin-top: $nav-bar-height-small;
-    height: $header-img-height-small;
+    object-position: 50% 50%;
     object-fit: cover;
-    // width: 100%;
-    // display: block;
-    // overflow: auto;
-  }
-  @include ccss-on-tablet-and-up {
-    #header-img {
-      margin-top: $nav-bar-height-large;
-      height: $header-img-height-large;
-    }
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
-  #nav-bar {
-    position: fixed;
-    height: $nav-bar-height-small;
-    width: calc(100% - 2rem);
-    top: 0;
+  @include ccss-on-tablet-and-up {
+    height: $header-height-large;
+    margin-top: $nav-bar-height-large;
+  }
+}
+
+// nav-bar
+#nav-bar {
+  height: $nav-bar-height-small;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  #nav-title {
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  #nav-menu {
+    position: absolute;
+    right: 1rem;
+  }
+
+  #nav-links {
+    @include list-reset;
+    letter-spacing: 1px;
+    display: none;
+  }
+
+  @include ccss-on-tablet-and-up {
+    height: $nav-bar-height-large;
 
     #nav-title {
-      margin: 0;
-      letter-spacing: 1px;
+      margin-bottom: 1rem;
     }
 
-    #nav-trigger {
-      position: absolute;
-      right: 1rem;
-    }
-
-    #nav-links {
-      @include list-reset;
-      letter-spacing: 1px;
+    #nav-menu {
       display: none;
     }
 
-    // nav-bar on tablet view
-    @include ccss-on-tablet-and-up {
-      height: $nav-bar-height-large;
-
-      #nav-title {
-        margin-bottom: 1rem;
-      }
-
-      #nav-trigger {
-        display: none;
-      }
-
-      #nav-links {
-        display: flex;
-      }
+    #nav-links {
+      display: flex;
     }
   }
 }
 
-#nav-drawer {
+// nav-drawer
+#drawer {
+  $nav-drawer-header-height: $nav-bar-height-small;
+
   transition: left 0.2s;
   position: fixed;
   top: 0;
-  left: -90vw;
-  width: 90vw;
+  left: -100vw;
+  width: 100vw;
   height: 100vh;
   z-index: 10;
+
+  #drawer-header {
+    height: $nav-drawer-header-height;
+  }
+
+  #drawer-close {
+    background-color: $ccss-text-color;
+    width: $nav-drawer-header-height;
+    height: $nav-drawer-header-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .icon {
+      width: 18px;
+    }
+  }
+
+  #drawer-links {
+    @include list-reset;
+
+    .drawer-link {
+      padding: 0.25rem 0;
+    }
+  }
 
   &.active {
     left: 0;

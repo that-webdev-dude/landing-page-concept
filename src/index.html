@@ -8,31 +8,39 @@
   </head>
   <body id="body">
     <header id="header">
-      <div class="container fluid">
-        <img id="header-img" src="https://via.placeholder.com/1024" />
-        <nav id="nav-bar" class="white d-flex flex-column align-center justify-center">
+      <div class="container fluid fill-height">
+        <img id="header-img" src="./images/placeholder.jpg" />
+      </div>
+      <nav id="nav-bar" class="white">
+        <div class="container fluid fill-height d-flex flex-column align-center justify-center">
           <div id="nav-title" class="display-4 text-weight-bold text-style-uppercase">myplant.com</div>
-          <div id="nav-trigger" class="icon"><img src="./images/icon-hamburger.svg" alt="icon-hamburger" /></div>
-          <nav id="nav-drawer" class="white">
-            <div class="container fluid fill-height primary">
-              <div class="icon"><img src="./images/icon-close.svg" alt="icon-close" /></div>
-              <div class="display-4 text-weight-bold text-style-uppercase">myplant.com</div>
-              <ul>
-                <li class="nav-link  text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">roots</a></li>
-                <li class="nav-link  text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">plants</a></li>
-                <li class="nav-link  text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">stock</a></li>
-                <li class="nav-link  text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">follow</a></li>
-              </ul>
-            </div>
-          </nav>
+          <div id="nav-menu" class="icon"><img src="./images/icon-hamburger.svg" alt="icon-hamburger" /></div>
           <ul id="nav-links">
             <li class="nav-link text-small text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">roots</a></li>
             <li class="nav-link text-small text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">plants</a></li>
             <li class="nav-link text-small text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">stock</a></li>
             <li class="nav-link text-small text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">follow</a></li>
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
+      <nav id="drawer">
+        <div class="container fluid fill-height white">
+          <div id="drawer-header" class="d-flex align-center justify-space-between">
+            <div id="drawer-title" class="display-4 text-weight-bold text-style-uppercase">myplant.com</div>
+            <div id="drawer-close" class="icon">
+              <div class="icon">
+                <img src="./images/icon-close.svg" alt="icon-close" />
+              </div>
+            </div>
+          </div>
+          <ul id="drawer-links">
+            <li class="drawer-link text-style-uppercase text-weight-bold"><a href="#" class="underline">roots</a></li>
+            <li class="drawer-link text-style-uppercase text-weight-bold"><a href="#" class="underline">plants</a></li>
+            <li class="drawer-link text-style-uppercase text-weight-bold"><a href="#" class="underline">stock</a></li>
+            <li class="drawer-link text-style-uppercase text-weight-bold"><a href="#" class="underline">follow</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
     <section>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit quisquam, veritatis, explicabo cum voluptatem commodi earum repudiandae sed harum
@@ -64,12 +72,24 @@
     </section>
     <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
     <script>
-      const navTrigger = document.querySelector("#nav-trigger");
+      const navmenu = document.querySelector("#nav-menu");
       const navDrawer = {
-        element: document.querySelector("#nav-drawer"),
+        closeBtn: document.querySelector("#drawer-close"),
+        element: document.querySelector("#drawer"),
         active: false
       };
-      navTrigger.addEventListener("click", () => {
+      navDrawer.closeBtn.addEventListener("click", () => {
+        navDrawer.active = !navDrawer.active;
+        const body = document.querySelector("#body");
+        if (navDrawer.active) {
+          body.classList.add("overflow-hidden");
+          navDrawer.element.classList.add("active");
+        } else {
+          body.classList.remove("overflow-hidden");
+          navDrawer.element.classList.remove("active");
+        }
+      });
+      navmenu.addEventListener("click", () => {
         navDrawer.active = !navDrawer.active;
         const body = document.querySelector("#body");
         if (navDrawer.active) {
