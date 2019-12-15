@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>--project-name--</title>
   </head>
-  <body id="body">
+  <body id="body" class="white">
     <header id="header">
       <div class="container fluid fill-height">
         <img id="header-img" src="./images/placeholder.jpg" />
       </div>
       <nav id="nav-bar" class="white">
         <div class="container fluid fill-height d-flex flex-column align-center justify-center">
-          <div id="nav-title" class="display-4 text-weight-bold text-style-uppercase">myplant.com</div>
+          <div id="nav-title" class="display-5 text-weight-bold text-style-uppercase">myplant.com</div>
           <div id="nav-menu" class="btn btn-icon btn-squared transparent"><img class="icon" src="./images/icon-hamburger.svg" alt="icon-hamburger" /></div>
           <ul id="nav-links">
             <li class="nav-link text-small text-style-uppercase text-weight-bold px-1"><a href="#" class="underline">roots</a></li>
@@ -26,59 +26,75 @@
       <nav id="drawer">
         <div class="container fluid fill-height white">
           <div id="drawer-header" class="d-flex align-center justify-space-between">
-            <div id="drawer-title" class="display-4 text-weight-bold text-style-uppercase">myplant.com</div>
+            <div id="drawer-title" class="display-5 text-weight-bold text-style-uppercase">myplant.com</div>
             <div id="drawer-close" class="btn btn-icon btn-squared black"><img class="icon" src="./images/icon-close.svg" alt="icon-close" /></div>
           </div>
           <ul id="drawer-links" class="py-1">
-            <li class="drawer-link text-style-uppercase text-weight-bold"><a href="#" class="underline">roots</a></li>
-            <li class="drawer-link text-style-uppercase text-weight-bold"><a href="#" class="underline">plants</a></li>
-            <li class="drawer-link text-style-uppercase text-weight-bold"><a href="#" class="underline">stock</a></li>
-            <li class="drawer-link text-style-uppercase text-weight-bold"><a href="#" class="underline">follow</a></li>
+            <li class="text-style-uppercase text-weight-bold"><a href="#" class="drawer-link underline">roots</a></li>
+            <li class="text-style-uppercase text-weight-bold"><a href="#" class="drawer-link underline">plants</a></li>
+            <li class="text-style-uppercase text-weight-bold"><a href="#" class="drawer-link underline">stock</a></li>
+            <li class="text-style-uppercase text-weight-bold"><a href="#" class="drawer-link underline">follow</a></li>
           </ul>
         </div>
       </nav>
     </header>
-    <section>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, sunt commodi officia eos quia assumenda alias ratione cum vitae nisi voluptates
-      consequatur eligendi dolorem facilis minima nulla aut provident blanditiis laboriosam vero expedita accusantium. Suscipit dicta labore officiis veniam
-      laborum mollitia nihil non fugit eos maxime illum quasi exercitationem quisquam, accusamus quidem saepe dignissimos a alias doloribus est sit nobis.
-      Tempore eaque vel molestiae officiis veniam aliquid esse nulla. Tempora dignissimos minima veniam saepe consequatur et deleniti amet cumque libero
-      necessitatibus assumenda, sunt, perferendis blanditiis repudiandae ullam natus provident ex, velit cum labore maxime laborum? Nostrum est qui adipisci
-      omnis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptatem nesciunt consectetur placeat dolores, voluptate quod sit pariatur
-      tempore animi unde numquam aliquid eveniet maxime similique inventore quo nobis quisquam delectus sint cum, harum quis? Rem ipsa possimus quibusdam
-      repellat in vitae non autem nihil. Officiis ad, vero mollitia repellendus a voluptas laborum placeat tempora aspernatur assumenda quisquam porro, vitae
-      ullam. Modi iusto quo obcaecati temporibus explicabo dolor ducimus maiores asperiores autem ratione eaque libero repellat, exercitationem optio laboriosam
-      dolorem? Culpa incidunt iure maxime tempore, eum labore, consequuntur, dolorem veniam impedit fuga autem delectus numquam fugit. Quae impedit itaque et.
-    </section>
+    <main>
+      <div class="container fluid">
+        <section id="hero" class="section text-align-center d-flex flex-column align-center justify-center">
+          <h1 class="display-4 text-style-uppercase">the plants you need</h1>
+          <p class="text-small text-muted text-style-uppercase text-weight-semibold text-spacing-1 mb-0">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptate nobis.
+          </p>
+        </section>
+        <section id="roots" class="section">
+          <div class="container pa-0">
+            <article class="mb-2">
+              <img src="./images/placeholder.jpg" alt="roots-image" />
+              <h2 class="display-5 text-style-capitalize">our roots</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate fuga a harum sunt ad rerum quidem aliquid odit itaque excepturi!</p>
+              <a href="#" class="btn btn-large btn-outlined">learn more</a>
+            </article>
+            <article class="mb-2">
+              <img src="./images/placeholder.jpg" alt="roots-image" />
+              <h2 class="display-5 text-style-capitalize">our plants</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate fuga a harum sunt ad rerum quidem aliquid odit itaque excepturi!</p>
+              <a href="#" class="btn btn-large btn-outlined">learn more</a>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
     <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
     <script>
-      const navmenu = document.querySelector("#nav-menu");
       const navDrawer = {
-        closeBtn: document.querySelector("#drawer-close"),
+        active: false,
         element: document.querySelector("#drawer"),
-        active: false
+        triggers: [document.querySelector("#drawer-close"), document.querySelector("#nav-menu"), ...Array.from(document.querySelectorAll(".drawer-link"))],
+        container: document.querySelector("#body")
       };
-      navDrawer.closeBtn.addEventListener("click", () => {
+
+      const toggleClass = (element, className) => {
+        element.classList.contains(className) ? element.classList.remove(className) : element.classList.add(className);
+      };
+
+      const hideScrollbar = element => {
+        element.style.overflow = "hidden";
+      };
+
+      const showScrollbar = element => {
+        element.style.overflow = "auto";
+      };
+
+      const toggleState = () => {
         navDrawer.active = !navDrawer.active;
-        const body = document.querySelector("#body");
-        if (navDrawer.active) {
-          body.classList.add("overflow-hidden");
-          navDrawer.element.classList.add("active");
-        } else {
-          body.classList.remove("overflow-hidden");
-          navDrawer.element.classList.remove("active");
-        }
-      });
-      navmenu.addEventListener("click", () => {
-        navDrawer.active = !navDrawer.active;
-        const body = document.querySelector("#body");
-        if (navDrawer.active) {
-          body.classList.add("overflow-hidden");
-          navDrawer.element.classList.add("active");
-        } else {
-          body.classList.remove("overflow-hidden");
-          navDrawer.element.classList.remove("active");
-        }
+        navDrawer.active ? hideScrollbar(navDrawer.container) : showScrollbar(navDrawer.container);
+        toggleClass(navDrawer.element, "active");
+      };
+
+      navDrawer.triggers.forEach(trigger => {
+        trigger.addEventListener("click", () => {
+          toggleState();
+        });
       });
     </script>
   </body>

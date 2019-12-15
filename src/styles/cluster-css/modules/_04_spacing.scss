@@ -12,7 +12,7 @@ dependencies: none
     margin: #{$-space}rem;
   }
   .pa-#{$-space} {
-    padding: #{$-space}rem;
+    padding: #{$-space}rem !important;
   }
 }
 

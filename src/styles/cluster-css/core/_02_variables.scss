@@ -9,6 +9,7 @@ $ccss-primary-color: #b8336a !default;
 $ccss-secondary-color: #2e5266 !default;
 $ccss-tertiary-color: #8d99ae !default;
 $ccss-offblack-color: rgba(0, 0, 0, 0.87) !default;
+$ccss-mutedblack-color: rgba(0, 0, 0, 0.57) !default;
 $ccss-success-color: #4caf50 !default;
 $ccss-warning-color: #ffeb3b !default;
 $ccss-error-color: #f44336 !default;
@@ -43,12 +44,15 @@ $ccss-container-max-width: 1440px !default;
 $ccss-container-padding: 0 1rem !default;
 
 // navbar
-$ccss-navbar-min-height: 64px;
-$ccss-navbar-max-height: 80px;
+// $ccss-navbar-min-height: 64px;
+// $ccss-navbar-max-height: 80px;
 
 // buttons
-$ccss-btn-background: $ccss-primary-color !default;
-$ccss-btn-font-style: capitalize !default;
-$ccss-btn-font-weight: 500 !default;
-$ccss-btn-border-radius: 2px !default;
+// $ccss-btn-background: $ccss-primary-color !default;
+$ccss-btn-background: $ccss-offblack-color !default;
+// $ccss-btn-font-style: capitalize !default;
+$ccss-btn-font-style: uppercase !default;
+// $ccss-btn-font-weight: 500 !default;
+$ccss-btn-font-weight: 600 !default;
+$ccss-btn-border-radius: 4px !default;
 $ccss-btn-letter-spacing: 0px !default;

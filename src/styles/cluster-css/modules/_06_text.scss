@@ -39,6 +39,13 @@ $text-positions: left, center, right;
   }
 }
 
+// spacing
+@for $index from 1 to 5 {
+  &.text-spacing-#{$index} {
+    letter-spacing: #{$index}px;
+  }
+}
+
 // direction
 .text-direction-vertical {
   display: inline-block;

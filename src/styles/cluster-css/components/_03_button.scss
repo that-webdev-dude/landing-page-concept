@@ -146,6 +146,7 @@ button.btn {
 
   // icon buttons
   &.btn-icon {
+    padding: 0;
     width: $-ccss-btn-min-width;
     height: $-ccss-btn-min-width;
     min-width: $-ccss-btn-min-width;

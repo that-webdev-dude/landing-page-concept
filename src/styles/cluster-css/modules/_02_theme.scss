@@ -29,7 +29,8 @@ $-theme-colors: (
 $-common-colors: (
   "transparent": transparent,
   "white": #ffffff,
-  "black": $ccss-offblack-color
+  "black": $ccss-offblack-color,
+  "muted": $ccss-mutedblack-color
 );
 @each $-name, $-value in $-common-colors {
   .#{$-name} {
