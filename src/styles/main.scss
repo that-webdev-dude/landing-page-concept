@@ -41,19 +41,25 @@ a {
 // FIXME
 // add position helpers to the framework
 
+// --------------------------
 // global variables
+// --------------------------
 $nav-bar-height-small: 4rem;
 $nav-bar-height-large: 12rem;
 $header-height-small: 736px;
 $header-height-large: 812px;
 
+// --------------------------
 // classes
+// --------------------------
 .section {
-  min-height: 576px;
-  padding: 3rem 1rem;
+  min-height: 480px;
+  padding: 3rem 0;
 }
 
+// --------------------------
 // header
+// --------------------------
 #header {
   width: 100%;
   display: block;
@@ -74,7 +80,9 @@ $header-height-large: 812px;
   }
 }
 
+// --------------------------
 // nav-bar
+// --------------------------
 #nav-bar {
   height: $nav-bar-height-small;
   position: fixed;
@@ -121,7 +129,9 @@ $header-height-large: 812px;
   }
 }
 
+// --------------------------
 // nav-drawer
+// --------------------------
 #drawer {
   $nav-drawer-header-height: $nav-bar-height-small;
 
@@ -161,5 +171,45 @@ $header-height-large: 812px;
 
   &.active {
     left: 0;
+  }
+}
+
+// --------------------------
+// sections
+// --------------------------
+#hero-section {
+  #hero-section-layout {
+    display: flex;
+    min-height: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+#roots-section {
+  #roots-section-layout {
+    min-height: inherit;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+
+    #roots-article,
+    #products-article {
+      width: 100%;
+    }
+
+    #roots-article {
+      padding-bottom: 4rem;
+    }
+
+    @include ccss-on-tablet-and-up {
+      #roots-article,
+      #products-article {
+        padding: 0 1rem;
+        width: 50%;
+      }
+    }
   }
 }
