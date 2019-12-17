@@ -50,14 +50,6 @@ $header-height-small: 736px;
 $header-height-large: 812px;
 
 // --------------------------
-// classes
-// --------------------------
-.section {
-  min-height: 480px;
-  padding: 3rem 0;
-}
-
-// --------------------------
 // header
 // --------------------------
 #header {
@@ -175,41 +167,58 @@ $header-height-large: 812px;
 }
 
 // --------------------------
-// sections
+// classes
 // --------------------------
-#hero-section {
-  #hero-section-layout {
-    display: flex;
-    min-height: inherit;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.section {
+  min-height: 408px;
+
+  &.section-extended {
+    min-height: 1024px;
+
+    @include ccss-on-tablet-and-up {
+      min-height: 1144px;
+    }
   }
 }
 
-#roots-section {
-  #roots-section-layout {
-    min-height: inherit;
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
+.textbox {
+  display: block;
+  max-width: 600px;
+}
 
+// --------------------------
+// sections
+// --------------------------
+#roots-section {
+  // #roots-section-layout {
+  // min-height: inherit;
+  // display: flex;
+  // flex-flow: wrap;
+  // align-items: center;
+
+  #roots-article,
+  #products-article {
+    width: 100%;
+  }
+
+  #roots-article {
+    padding-bottom: 4rem;
+  }
+
+  @include ccss-on-tablet-and-up {
     #roots-article,
     #products-article {
-      width: 100%;
-    }
-
-    #roots-article {
-      padding-bottom: 4rem;
-    }
-
-    @include ccss-on-tablet-and-up {
-      #roots-article,
-      #products-article {
-        padding: 0 1rem;
-        width: 50%;
-      }
+      padding: 0 1rem;
+      width: 50%;
     }
   }
+  // }
+}
+
+#mission-section {
+  background-image: url("../images/placeholder.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -7,7 +7,8 @@
     <title>--project-name--</title>
   </head>
   <body id="body" class="white">
-    <header id="header">
+    <!-- header -->
+    <header id="header" class="pb-4">
       <div class="container fluid fill-height">
         <img id="header-img" src="./images/placeholder.jpg" />
       </div>
@@ -39,37 +40,57 @@
       </nav>
     </header>
     <main>
+      <!-- hero -->
       <div class="container fluid">
-        <section id="hero-section" class="section">
-          <div id="hero-section-layout">
-            <h1 class="display-4 text-style-uppercase">the plants you need</h1>
-            <p class="text-small text-muted text-style-uppercase text-weight-semibold text-spacing-1 mb-0">
+        <section id="hero-section" class="section d-flex align-center justify-center py-4">
+          <div class="textbox text-align-center">
+            <h2 class="display-4 text-style-uppercase">the plants you need</h2>
+            <p class="text-small text-muted text-style-uppercase text-weight-semibold text-spacing-1 text-muted mb-0">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptate nobis.
             </p>
           </div>
         </section>
-        <section id="roots-section" class="section">
-          <div class="container pa-0">
-            <div id="roots-section-layout">
-              <article id="roots-article">
-                <img src="./images/placeholder.jpg" alt="roots-image" />
-                <h2 class="display-5 text-style-uppercase">our roots</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate fuga a harum sunt ad rerum quidem aliquid odit itaque excepturi!</p>
-                <a href="#" class="btn btn-large btn-outlined">learn more</a>
-              </article>
-              <article id="products-article">
-                <img src="./images/placeholder.jpg" alt="roots-image" />
-                <h2 class="display-5 text-style-uppercase">our plants</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate fuga a harum sunt ad rerum quidem aliquid odit itaque excepturi!</p>
-                <a href="#" class="btn btn-large btn-outlined">learn more</a>
-              </article>
-            </div>
+        <!-- roots -->
+        <section id="roots-section" class="section py-4">
+          <div class="container fill-height d-flex flex-row flex-wrap align-center pa-0">
+            <article id="roots-article">
+              <img src="./images/placeholder.jpg" alt="roots-image" />
+              <h2 class="display-5 text-style-uppercase">our roots</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate fuga a harum sunt ad rerum quidem aliquid odit itaque excepturi!</p>
+              <a href="#" class="btn btn-outlined"><span class="text-small text-spacing-1">learn more</span></a>
+            </article>
+            <article id="products-article">
+              <img src="./images/placeholder.jpg" alt="roots-image" />
+              <h2 class="display-5 text-style-uppercase">our plants</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate fuga a harum sunt ad rerum quidem aliquid odit itaque excepturi!
+              </p>
+              <a href="#" class="btn btn-outlined"><span class="text-small text-spacing-1">learn more</span></a>
+            </article>
           </div>
         </section>
-        <section class="primary">aaa</section>
+        <!-- mission -->
+        <section id="mission-section" class="section section-extended d-flex align-center justify-center my-4">
+          <div class="textbox text-align-center">
+            <h2 class="text-small text-style-uppercase text-muted text-spacing-1 mb-1">our mission</h2>
+            <p class="display-4 text-style-uppercase text-weight-bold px-1 ma-0">
+              driven by the passion for an environment that is happy, healthy, and beautiful.
+            </p>
+          </div>
+        </section>
+        <!-- shop -->
+        <section id="shop-section" class="section d-flex align-center justify-center py-4">
+          <div class="textbox text-align-center">
+            <h2 class="display-4 text-style-uppercase">bring nature indoors</h2>
+            <p class="text-small text-muted text-style-uppercase text-weight-semibold text-spacing-1 text-muted mb-2">
+              There are house plants in all sorts, shapes and sizes. Myplant.com has a wide selection of house plants to choose from!
+            </p>
+            <a href="#" class="btn btn-outlined"><span class="text-small text-spacing-1">visit our shop</span></a>
+          </div>
+        </section>
       </div>
     </main>
-    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script>
       const navDrawer = {
         active: false,
