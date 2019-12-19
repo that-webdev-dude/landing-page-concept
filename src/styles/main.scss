@@ -170,6 +170,8 @@ $header-height-large: 812px;
 // classes
 // --------------------------
 .section {
+  display: block;
+  position: relative;
   min-height: 408px;
 
   &.section-extended {
@@ -221,4 +223,10 @@ $header-height-large: 812px;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#gallery-section {
+  display: grid;
+  grid-template: 1fr 0.5fr / 1fr 0.5fr;
+  grid-auto-flow: row dense;
 }
