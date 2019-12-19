@@ -227,6 +227,28 @@ $header-height-large: 812px;
 
 #gallery-section {
   display: grid;
-  grid-template: 1fr 0.5fr / 1fr 0.5fr;
-  grid-auto-flow: row dense;
+  grid-gap: 1rem;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "featured-1 featured-2"
+    "featured-1 featured-3";
+
+  #featured-1 {
+    grid-area: featured-1;
+  }
+  #featured-2 {
+    grid-area: featured-2;
+  }
+  #featured-3 {
+    grid-area: featured-3;
+  }
+
+  .gallery-image {
+    object-position: 50% 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 }
