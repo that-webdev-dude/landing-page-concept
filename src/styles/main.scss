@@ -50,6 +50,28 @@ $header-height-small: 736px;
 $header-height-large: 812px;
 
 // --------------------------
+// classes
+// --------------------------
+.section {
+  display: block;
+  position: relative;
+  min-height: 408px;
+
+  &.section-extended {
+    min-height: 1024px;
+
+    @include ccss-on-tablet-and-up {
+      min-height: 1144px;
+    }
+  }
+}
+
+.textbox {
+  display: block;
+  max-width: 600px;
+}
+
+// --------------------------
 // header
 // --------------------------
 #header {
@@ -167,37 +189,9 @@ $header-height-large: 812px;
 }
 
 // --------------------------
-// classes
-// --------------------------
-.section {
-  display: block;
-  position: relative;
-  min-height: 408px;
-
-  &.section-extended {
-    min-height: 1024px;
-
-    @include ccss-on-tablet-and-up {
-      min-height: 1144px;
-    }
-  }
-}
-
-.textbox {
-  display: block;
-  max-width: 600px;
-}
-
-// --------------------------
 // sections
 // --------------------------
 #roots-section {
-  // #roots-section-layout {
-  // min-height: inherit;
-  // display: flex;
-  // flex-flow: wrap;
-  // align-items: center;
-
   #roots-article,
   #products-article {
     width: 100%;
@@ -214,7 +208,6 @@ $header-height-large: 812px;
       width: 50%;
     }
   }
-  // }
 }
 
 #mission-section {
@@ -223,16 +216,21 @@ $header-height-large: 812px;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+
+  .textbox {
+    max-width: 1200px;
+  }
 }
 
 #gallery-section {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas:
-    "featured-1 featured-2"
-    "featured-1 featured-3";
+    "featured-1"
+    "featured-2"
+    "featured-3";
 
   #featured-1 {
     grid-area: featured-1;
@@ -250,5 +248,50 @@ $header-height-large: 812px;
     width: 100%;
     height: 100%;
     display: block;
+  }
+
+  .gallery-image-caption {
+    display: block;
+    position: absolute;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+  }
+
+  @include ccss-on-tablet-and-up {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "featured-1 featured-2"
+      "featured-1 featured-3";
+
+    .gallery-image-caption {
+      padding: 2rem;
+    }
+  }
+}
+
+#form {
+  #form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    min-height: 3.5rem;
+  }
+
+  #email {
+    outline: none;
+    min-height: 3rem;
+    min-width: 100%;
+    padding: 0.5rem 1rem;
+    margin: 0 0 1rem 0;
+  }
+
+  @include ccss-on-tablet-and-up {
+    #email {
+      min-width: 100px;
+      margin: 0 0.5rem 0 0;
+    }
   }
 }
