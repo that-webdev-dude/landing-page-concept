@@ -295,3 +295,12 @@ $header-height-large: 812px;
     }
   }
 }
+
+// --------------------------
+// footer
+// --------------------------
+#footer {
+  #footer-follow {
+    @include list-reset;
+  }
+}
