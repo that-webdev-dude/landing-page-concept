@@ -84,7 +84,7 @@ $header-height-large: 812px;
   width: 100%;
   display: block;
   height: $header-height-small;
-  // margin-top: $nav-bar-height-small;
+  margin-top: $nav-bar-height-small;
 
   #header-img {
     object-position: 50% 50%;
@@ -207,6 +207,11 @@ $header-height-large: 812px;
     padding-bottom: 4rem;
   }
 
+  #products-article {
+    width: 300px;
+    height: 300px;
+  }
+
   @include ccss-on-tablet-and-up {
     #roots-article,
     #products-article {
@@ -217,7 +222,7 @@ $header-height-large: 812px;
 }
 
 #mission-section {
-  background-image: url("../images/placeholder.jpg");
+  background-image: url("../images/plant-pot-2.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
