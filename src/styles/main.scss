@@ -1,9 +1,27 @@
 @import "./cluster-css/cluster";
 
+// --------------------------
+// global variables
+// --------------------------
+$nav-bar-height-small: 4rem;
+$nav-bar-height-large: 12rem;
+$header-height-small: 736px;
+$header-height-large: 812px;
+
+// --------------------------
+// elements
+// --------------------------
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  // margin-top: $nav-bar-height-small;
+
+  // @include ccss-on-tablet-and-up {
+  //   margin-top: $nav-bar-height-large;
+  // }
 }
 
 // FIXME
@@ -46,14 +64,6 @@ a {
 
 // FIXME
 // add position helpers to the framework
-
-// --------------------------
-// global variables
-// --------------------------
-$nav-bar-height-small: 4rem;
-$nav-bar-height-large: 12rem;
-$header-height-small: 736px;
-$header-height-large: 812px;
 
 // --------------------------
 // classes
@@ -197,32 +207,76 @@ $header-height-large: 812px;
 // --------------------------
 // sections
 // --------------------------
+// #roots-section {
+//   #roots-article,
+//   #products-article {
+//     width: 100%;
+//   }
+
+//   #roots-article {
+//     padding-bottom: 4rem;
+//   }
+
+//   #products-article {
+//     #video {
+//       padding: 0;
+//       margin: 0;
+//       display: block;
+//       height: auto !important;
+//       width: 100% !important;
+//       object-fit: cover;
+//     }
+//   }
+
+//   @include ccss-on-tablet-and-up {
+//     #roots-article,
+//     #products-article {
+//       padding: 0 1rem;
+//       width: 50%;
+//     }
+//   }
+// }
 #roots-section {
-  #roots-article,
-  #products-article {
-    width: 100%;
+  #video {
+    padding: 0;
+    margin: 0;
+    display: block;
+    height: auto !important;
+    width: 100% !important;
+    object-fit: cover;
   }
 
-  #roots-article {
+  #roots-section-wrapper {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "roots"
+      "products";
+    @include ccss-on-tablet-and-up {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "roots products";
+    }
+  }
+
+  #roots {
+    grid-area: roots;
     padding-bottom: 4rem;
   }
-
-  #products-article {
-    width: 300px;
-    height: 300px;
+  #products {
+    grid-area: products;
   }
 
   @include ccss-on-tablet-and-up {
-    #roots-article,
-    #products-article {
-      padding: 0 1rem;
-      width: 50%;
+    #roots,
+    #products {
+      padding-bottom: 0;
     }
   }
 }
 
 #mission-section {
-  background-image: url("../images/plant-pot-2.jpg");
+  background-image: url("../images/img-mission-min.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;

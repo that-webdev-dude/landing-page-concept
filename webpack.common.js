@@ -68,6 +68,18 @@ const common = {
             }
           }
         ]
+      },
+      {
+        test: /\.(mp4)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name]-[contenthash].[ext]",
+              esModule: false
+            }
+          }
+        ]
       }
     ]
   }
