@@ -77,7 +77,6 @@ const common = {
           {
             loader: "file-loader",
             options: {
-              // name: "[name]-[contenthash].[ext]",
               name: "[name].[ext]",
               esModule: false
             }
