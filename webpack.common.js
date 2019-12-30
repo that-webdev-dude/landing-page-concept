@@ -37,6 +37,7 @@ const common = {
         use: [{ loader: "html-loader" }]
       },
       {
+        // image files
         test: /\.(svg|png|jpeg|jpg|gif)$/,
         use: [
           {
@@ -70,12 +71,14 @@ const common = {
         ]
       },
       {
+        // video files
         test: /\.(mp4)$/,
         use: [
           {
             loader: "file-loader",
             options: {
-              name: "[name]-[contenthash].[ext]",
+              // name: "[name]-[contenthash].[ext]",
+              name: "[name].[ext]",
               esModule: false
             }
           }
