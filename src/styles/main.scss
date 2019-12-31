@@ -11,17 +11,19 @@ $header-height-large: 812px;
 // --------------------------
 // elements
 // --------------------------
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+
+  @include ccss-on-tablet-and-up {
+    scroll-padding-top: 8rem;
+  }
+}
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  // margin-top: $nav-bar-height-small;
-
-  // @include ccss-on-tablet-and-up {
-  //   margin-top: $nav-bar-height-large;
-  // }
 }
 
 // FIXME
@@ -87,6 +89,14 @@ a {
   max-width: 600px;
 }
 
+.btn {
+  border: solid 2px $ccss-text-color !important;
+  &:hover {
+    color: white !important;
+    background-color: $ccss-text-color !important;
+  }
+}
+
 // --------------------------
 // header
 // --------------------------
@@ -109,10 +119,6 @@ a {
     margin-top: $nav-bar-height-large;
   }
 }
-
-// --------------------------
-// nav-bar
-// --------------------------
 #nav-bar {
   height: $nav-bar-height-small;
   position: fixed;
@@ -123,7 +129,6 @@ a {
   #nav-title {
     margin: 0;
     padding: 0 1rem;
-    letter-spacing: 1px;
     position: absolute;
     left: 1rem;
   }
@@ -131,6 +136,14 @@ a {
   #nav-menu {
     position: absolute;
     right: 1rem;
+
+    &.btn {
+      border: solid 2px transparent !important;
+      margin: 0 0.25rem;
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
   }
 
   #nav-links {
@@ -158,10 +171,6 @@ a {
     }
   }
 }
-
-// --------------------------
-// nav-drawer
-// --------------------------
 #drawer {
   $nav-drawer-header-height: $nav-bar-height-small;
 
@@ -205,37 +214,8 @@ a {
 }
 
 // --------------------------
-// sections
+// main
 // --------------------------
-// #roots-section {
-//   #roots-article,
-//   #products-article {
-//     width: 100%;
-//   }
-
-//   #roots-article {
-//     padding-bottom: 4rem;
-//   }
-
-//   #products-article {
-//     #video {
-//       padding: 0;
-//       margin: 0;
-//       display: block;
-//       height: auto !important;
-//       width: 100% !important;
-//       object-fit: cover;
-//     }
-//   }
-
-//   @include ccss-on-tablet-and-up {
-//     #roots-article,
-//     #products-article {
-//       padding: 0 1rem;
-//       width: 50%;
-//     }
-//   }
-// }
 #roots-section {
   #video {
     padding: 0;
@@ -281,6 +261,7 @@ a {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 8rem;
 
   .textbox {
     max-width: 1200px;
@@ -365,6 +346,14 @@ a {
 // footer
 // --------------------------
 #footer {
+  .btn {
+    border: solid 2px transparent !important;
+    margin: 0 0.25rem;
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+
   #footer-follow {
     @include list-reset;
   }
