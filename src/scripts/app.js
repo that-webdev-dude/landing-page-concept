@@ -1,48 +1,44 @@
-// import HelloWorldClass from "./components/HelloWorld";
-
 export default function() {
-  // const hello = new HelloWorldClass();
+  class StyleManager {
+    static set(element, property, value) {
+      if (element && element.style[property]) element.style[property] = value;
+    }
+  }
 
-  class ScrollBar {
-    static hide(selector) {
-      el = document.querySelector(selector);
-      el.style.overflow = "hidden";
+  class ScrollBarManager {
+    static hide(selector = "body") {
+      const element = document.querySelector(selector);
+      if (element) {
+        StyleManager.set(element, "overflow", "hidden");
+      } else {
+        console.warn(`ScrollBarManager: selector = ${selector} points to NO element`);
+      }
     }
 
-    static show(selector) {
-      el = document.querySelector(selector);
-      el.style.overflow = "auto";
+    static show(selector = "body") {
+      const element = document.querySelector(selector);
+      if (element) {
+        StyleManager.set(element, "overflow", "auto");
+      } else {
+        console.warn(`ScrollBarManager: selector = ${selector} points to NO element`);
+      }
     }
   }
 
   const navDrawer = {
     active: false,
     element: document.querySelector("#drawer"),
-    triggers: [document.querySelector("#drawer-close"), document.querySelector("#nav-menu"), ...Array.from(document.querySelectorAll(".drawer-link"))],
-    container: document.querySelector("#body")
+    triggers: [document.querySelector("#drawer-close"), document.querySelector("#nav-menu"), ...Array.from(document.querySelectorAll(".drawer-link"))]
   };
-
   const toggleClass = (element, className) => {
     element.classList.contains(className) ? element.classList.remove(className) : element.classList.add(className);
   };
-
-  const hideScrollbar = element => {
-    element.style.overflow = "hidden";
-  };
-
-  const showScrollbar = element => {
-    element.style.overflow = "auto";
-  };
-
   const toggleState = () => {
     navDrawer.active = !navDrawer.active;
-    navDrawer.active ? hideScrollbar(navDrawer.container) : showScrollbar(navDrawer.container);
+    navDrawer.active ? ScrollBarManager.hide() : ScrollBarManager.show();
     toggleClass(navDrawer.element, "active");
   };
-
   navDrawer.triggers.forEach(trigger => {
-    trigger.addEventListener("click", () => {
-      toggleState();
-    });
+    trigger.addEventListener("click", toggleState);
   });
 }
