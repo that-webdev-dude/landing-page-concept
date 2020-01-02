@@ -10,7 +10,7 @@ The project is aimed to achieve a clean and minimal design. The design process i
 
 ### Live Demo
 
-A live demo of the project is available [here](https://landing-page-design.netlify.com)
+A live demo of the project is available [here](https://landing-page-concept.netlify.com)
 
 ## Contributing
 
