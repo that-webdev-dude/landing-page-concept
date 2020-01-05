@@ -31,11 +31,12 @@ body {
 a {
   &.underline {
     position: relative;
-    padding-bottom: 0.3rem;
     &::after {
       content: "";
+      margin-top: 4px;
       border-color: inherit;
-      border-bottom: solid 1.5px;
+      border: solid 1px;
+      background-color: black;
       position: absolute;
       top: 1rem;
       bottom: 0;
@@ -119,23 +120,37 @@ a {
     margin-top: $nav-bar-height-large;
   }
 }
+
+// -------------------------------
+// navbar variables --------------
+// -------------------------------
 #nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   height: $nav-bar-height-small;
-  position: fixed;
   z-index: 10;
-  width: 100%;
-  top: 0;
+
+  .container {
+    @extend #nav-bar;
+  }
+
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
 
   #nav-title {
-    margin: 0;
-    padding: 0 1rem;
     position: absolute;
+    margin: 0;
     left: 1rem;
   }
 
   #nav-menu {
     position: absolute;
-    right: 1rem;
+    right: 0;
 
     &.btn {
       border: solid 2px transparent !important;
@@ -154,15 +169,18 @@ a {
 
   @include ccss-on-tablet-and-up {
     height: $nav-bar-height-large;
+    flex-direction: column;
+    justify-content: center;
 
     #nav-title {
       padding: 0;
-      margin-bottom: 1rem;
+      margin: 0 0 1rem;
       position: relative;
       left: 0;
     }
 
     #nav-menu {
+      position: relative;
       display: none;
     }
 
@@ -171,6 +189,7 @@ a {
     }
   }
 }
+
 #drawer {
   $nav-drawer-header-height: $nav-bar-height-small;
 
@@ -203,9 +222,9 @@ a {
       padding-bottom: 0.5rem;
     }
 
-    .drawer-link {
-      padding: 0.25rem 0;
-    }
+    // .nav-link {
+    //   margin: 4rem 0;
+    // }
   }
 
   &.active {
