@@ -122,30 +122,40 @@ a {
 }
 
 // -------------------------------
-// navbar variables --------------
+// navigation --------------------
+// classes:
+//   fixed
+//   large
+//   stacked
 // -------------------------------
 #nav-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: $nav-bar-height-small;
   z-index: 10;
-
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  min-height: $nav-bar-height-small;
   .container {
+    padding: 0;
+    height: 100%;
     @extend #nav-bar;
   }
 
   &.fixed {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     left: 0;
     top: 0;
   }
 
   #nav-title {
-    position: absolute;
     margin: 0;
-    left: 1rem;
+    padding: 0 1rem;
+  }
+
+  #nav-links {
+    @include list-reset;
+    letter-spacing: 1px;
+    display: none;
   }
 
   #nav-menu {
@@ -161,32 +171,40 @@ a {
     }
   }
 
-  #nav-links {
-    @include list-reset;
-    letter-spacing: 1px;
-    display: none;
-  }
-
   @include ccss-on-tablet-and-up {
-    height: $nav-bar-height-large;
-    flex-direction: column;
-    justify-content: center;
-
-    #nav-title {
-      padding: 0;
-      margin: 0 0 1rem;
-      position: relative;
-      left: 0;
+    &.large {
+      height: $nav-bar-height-large;
     }
 
-    #nav-menu {
-      position: relative;
-      display: none;
+    &.stacked {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      .container {
+        @extend .stacked;
+      }
+
+      &.centered {
+        align-items: center;
+        .container {
+          @extend .centered;
+        }
+      }
+
+      #nav-title {
+        padding: 0.5rem 1rem;
+      }
+
+      #nav-links {
+        display: flex;
+        padding: 0.5rem 0;
+      }
     }
 
-    #nav-links {
-      display: flex;
-    }
+    // #nav-menu {
+    //   position: relative;
+    //   display: none;
+    // }
   }
 }
 
@@ -197,7 +215,7 @@ a {
   position: fixed;
   top: 0;
   left: -100vw;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: 10;
 
@@ -217,14 +235,6 @@ a {
 
   #drawer-links {
     @include list-reset;
-
-    li {
-      padding-bottom: 0.5rem;
-    }
-
-    // .nav-link {
-    //   margin: 4rem 0;
-    // }
   }
 
   &.active {
