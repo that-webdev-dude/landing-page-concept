@@ -134,6 +134,7 @@ a {
   align-items: center;
   flex-direction: row;
   min-height: $nav-bar-height-small;
+  padding: 0 1rem;
   .container {
     padding: 0;
     height: 100%;
@@ -142,7 +143,7 @@ a {
 
   &.fixed {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     left: 0;
     top: 0;
   }
@@ -154,14 +155,17 @@ a {
 
   #nav-links {
     @include list-reset;
-    letter-spacing: 1px;
     display: none;
+    padding: 0.5rem 0;
+    li {
+      letter-spacing: 1px;
+      padding: 0 1rem;
+    }
   }
 
   #nav-menu {
     position: absolute;
     right: 0;
-
     &.btn {
       border: solid 2px transparent !important;
       margin: 0 0.25rem;
@@ -190,15 +194,14 @@ a {
           @extend .centered;
         }
       }
+    }
 
-      #nav-title {
-        padding: 0.5rem 1rem;
-      }
+    #nav-title {
+      padding: 0.5rem 1rem;
+    }
 
-      #nav-links {
-        display: flex;
-        padding: 0.5rem 0;
-      }
+    #nav-links {
+      display: flex;
     }
 
     // #nav-menu {

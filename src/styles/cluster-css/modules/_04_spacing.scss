@@ -29,10 +29,10 @@ dependencies: none
 }
 
 .mx-auto {
-  margin: 0 auto;
+  margin: 0 auto !important;
 }
 .px-auto {
-  padding: 0 auto;
+  padding: 0 auto !important;
 }
 
 // top and bottom
@@ -74,9 +74,9 @@ $-space-values: (
 
 @each $-name, $-value in $-space-values {
   .m#{$-name}-auto {
-    margin-#{$-value}: auto;
+    margin-#{$-value}: auto !important;
   }
   .p#{$-name}-auto {
-    padding-#{$-value}: auto;
+    padding-#{$-value}: auto !important;
   }
 }
