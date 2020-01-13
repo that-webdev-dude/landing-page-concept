@@ -4,6 +4,9 @@ here's the file to setup for customization
 dependencies: none
 */
 
+// FIXME
+// add position helpers to the framework
+
 // theme
 $ccss-primary-color: #b8336a !default;
 $ccss-secondary-color: #2e5266 !default;
@@ -39,6 +42,9 @@ $ccss-large-screen-max-width: 1440px;
 $ccss-container-max-width: 1904px !default;
 $ccss-container-padding: 0 1rem !default;
 
+// FIXME
+// add border variable
+// add hover states
 // buttons
 // $ccss-btn-background: $ccss-primary-color !default;
 $ccss-btn-background: $ccss-offblack-color !default;
