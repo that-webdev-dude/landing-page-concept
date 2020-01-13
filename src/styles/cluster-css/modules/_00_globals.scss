@@ -8,22 +8,6 @@ html {
   box-sizing: inherit;
 }
 
-// links
-a {
-  &:link,
-  &:visited {
-    -webkit-tap-highlight-color: transparent;
-    color: $ccss-link-color;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  &:hover,
-  &:active {
-    color: darken($ccss-link-color, 10);
-  }
-}
-
 // blockquote
 blockquote {
   margin: 1em 0;

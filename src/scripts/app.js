@@ -1,7 +1,7 @@
 export default function() {
   class StyleManager {
     static set(element, property, value) {
-      if (element && element.style[property]) element.style[property] = value;
+      if (element) element.style[property] = value;
     }
   }
 

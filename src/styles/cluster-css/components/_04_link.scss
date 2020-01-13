@@ -1,0 +1,59 @@
+/*
+link.scss
+dependencies:
+  - none
+classes:
+  - underlined (reverse animation)
+*/
+
+// links
+a,
+a.link {
+  &:link,
+  &:visited {
+    -webkit-tap-highlight-color: transparent;
+    color: $ccss-link-color;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  &:hover,
+  &:active {
+    color: darken($ccss-link-color, 10);
+  }
+
+  &.underline {
+    position: relative;
+    &::after {
+      content: "";
+      margin-top: 4px;
+      border-color: inherit;
+      border: solid 1px;
+      background-color: black;
+      position: absolute;
+      top: 1rem;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s;
+    }
+
+    &:hover {
+      &::after {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes underline {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

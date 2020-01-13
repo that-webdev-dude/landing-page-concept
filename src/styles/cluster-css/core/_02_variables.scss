@@ -34,20 +34,10 @@ $ccss-tablet-screen-max-width: 992px;
 $ccss-laptop-screen-max-width: 1200px;
 $ccss-large-screen-max-width: 1440px;
 
-// breakpoints (vuetify)
-// $ccss-mobile-screen-max-width: 600px;
-// $ccss-tablet-screen-max-width: 960px;
-// $ccss-laptop-screen-max-width: 1264px;
-// $ccss-large-screen-max-width: 1904px;
-
 // container
 // $ccss-container-max-width: 1440px !default;
 $ccss-container-max-width: 1904px !default;
 $ccss-container-padding: 0 1rem !default;
-
-// navbar
-// $ccss-navbar-min-height: 64px;
-// $ccss-navbar-max-height: 80px;
 
 // buttons
 // $ccss-btn-background: $ccss-primary-color !default;
@@ -58,3 +48,13 @@ $ccss-btn-font-style: uppercase !default;
 $ccss-btn-font-weight: 600 !default;
 $ccss-btn-border-radius: 4px !default;
 $ccss-btn-letter-spacing: 0px !default;
+
+// navbar
+$ccss-nav-bar-min-height: 4rem;
+$ccss-nav-bar-max-height: 12rem;
+$ccss-nav-link-letter-spacing: 1px !default;
+$ccss-nav-link-text-weight: 700 !default;
+$ccss-nav-link-text-style: uppercase !default;
+$ccss-nav-title-letter-spacing: 1px !default;
+$ccss-nav-title-text-weight: 700 !default;
+$ccss-nav-title-text-style: uppercase !default;

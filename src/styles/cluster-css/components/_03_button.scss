@@ -140,6 +140,7 @@ button.btn {
     border-radius: $-ccss-btn-min-width;
   }
 
+  // squared buttons
   &.btn-squared {
     border-radius: 0;
   }
@@ -147,9 +148,9 @@ button.btn {
   // icon buttons
   &.btn-icon {
     padding: 0;
-    width: $-ccss-btn-min-width;
-    height: $-ccss-btn-min-width;
-    min-width: $-ccss-btn-min-width;
-    min-height: $-ccss-btn-min-width;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
   }
 }

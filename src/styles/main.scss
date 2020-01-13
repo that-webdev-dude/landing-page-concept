@@ -1,14 +1,6 @@
 @import "./cluster-css/cluster";
 
 // --------------------------
-// global variables
-// --------------------------
-$nav-bar-height-small: 4rem;
-$nav-bar-height-large: 12rem;
-$header-height-small: 736px;
-$header-height-large: 812px;
-
-// --------------------------
 // elements
 // --------------------------
 html {
@@ -24,45 +16,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-// FIXME
-// add this one to the framework
-a {
-  &.underline {
-    position: relative;
-    &::after {
-      content: "";
-      margin-top: 4px;
-      border-color: inherit;
-      border: solid 1px;
-      background-color: black;
-      position: absolute;
-      top: 1rem;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.25s;
-    }
-
-    &:hover {
-      &::after {
-        transform-origin: left;
-        transform: scaleX(1);
-      }
-    }
-
-    @keyframes underline {
-      from {
-        transform: scaleX(0);
-      }
-      to {
-        transform: scaleX(1);
-      }
-    }
-  }
 }
 
 // FIXME
@@ -104,8 +57,8 @@ a {
 #header {
   width: 100%;
   display: block;
-  height: $header-height-small;
-  margin-top: $nav-bar-height-small;
+  height: 736px;
+  margin-top: 4rem;
 
   #header-img {
     object-position: 50% 50%;
@@ -116,148 +69,16 @@ a {
   }
 
   @include ccss-on-tablet-and-up {
-    height: $header-height-large;
-    margin-top: $nav-bar-height-large;
+    height: 821px;
+    margin-top: 12rem;
   }
 }
 
-// -------------------------------
-// navigation --------------------
-// classes:
-//   fixed
-//   large
-//   stacked
-// -------------------------------
-#nav-bar {
-  $nav-bar-min-height: $nav-bar-height-small;
-  $nav-bar-max-height: $nav-bar-height-large;
-
-  $nav-link-letter-spacing: 1px !default;
-  $nav-link-text-weight: 700 !default;
-  $nav-link-text-style: uppercase !default;
-
-  $nav-title-letter-spacing: 1px !default;
-  $nav-title-text-weight: 700 !default;
-  $nav-title-text-style: uppercase !default;
-
-  min-height: $nav-bar-min-height;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  padding: 0 1rem;
-  z-index: 10;
-  .container {
-    padding: 0;
-    height: 100%;
-    @extend #nav-bar;
-  }
-
-  &.fixed {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
-
-  #nav-title {
-    letter-spacing: $nav-title-letter-spacing;
-    text-transform: $nav-title-text-style;
-    font-weight: $nav-title-text-weight;
-    padding: 0 1rem;
-    margin: 0;
-  }
-
-  #nav-links {
-    @include list-reset;
-    display: none;
-    padding: 0.5rem 0;
-    li {
-      letter-spacing: $nav-link-letter-spacing;
-      text-transform: $nav-link-text-style;
-      font-weight: $nav-link-text-weight;
-      padding: 0 1rem;
-    }
-  }
-
-  // here
-  // here
-  // here
-  #test-menu {
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // margin: 0 1rem;
-    // position: absolute;
-    // right: 0;
-
-    // &::after {
-    //   // content: "aaa";
-    //   content: url("../images/icon-hamburger.svg");
-    //   position: absolute;
-    //   height: 100%;
-    //   width: 100%;
-    //   left: 0;
-    //   top: 0;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    // }
-  }
-
-  #nav-menu {
-    position: absolute;
-    right: 0;
-
-    &.btn {
-      border: solid 2px transparent !important;
-      margin: 0 0.25rem;
-      &:hover {
-        background-color: transparent !important;
-      }
-    }
-  }
-
-  @include ccss-on-tablet-and-up {
-    &.large {
-      height: $nav-bar-max-height;
-    }
-
-    &.stacked {
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      .container {
-        @extend .stacked;
-      }
-
-      &.centered {
-        align-items: center;
-        .container {
-          @extend .centered;
-        }
-      }
-    }
-
-    #nav-title {
-      padding: 0.5rem 1rem;
-    }
-
-    #nav-links {
-      display: flex;
-    }
-
-    // #nav-menu {
-    //   position: relative;
-    //   display: none;
-    // }
-  }
-}
-
+// --------------------------
+// navigation drawer
+// --------------------------
 #drawer {
-  $nav-drawer-header-height: $nav-bar-height-small;
+  $nav-drawer-header-height: 4rem;
 
   transition: left 0.2s;
   position: fixed;
@@ -275,6 +96,8 @@ a {
     position: absolute;
     right: 0;
     top: 0;
+    width: $nav-drawer-header-height;
+    height: $nav-drawer-header-height;
 
     .icon {
       width: 18px;
