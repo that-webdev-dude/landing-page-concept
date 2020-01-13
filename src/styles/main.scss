@@ -129,12 +129,23 @@ a {
 //   stacked
 // -------------------------------
 #nav-bar {
-  z-index: 10;
+  $nav-bar-min-height: $nav-bar-height-small;
+  $nav-bar-max-height: $nav-bar-height-large;
+
+  $nav-link-letter-spacing: 1px !default;
+  $nav-link-text-weight: 700 !default;
+  $nav-link-text-style: uppercase !default;
+
+  $nav-title-letter-spacing: 1px !default;
+  $nav-title-text-weight: 700 !default;
+  $nav-title-text-style: uppercase !default;
+
+  min-height: $nav-bar-min-height;
   display: flex;
   align-items: center;
   flex-direction: row;
-  min-height: $nav-bar-height-small;
   padding: 0 1rem;
+  z-index: 10;
   .container {
     padding: 0;
     height: 100%;
@@ -149,8 +160,11 @@ a {
   }
 
   #nav-title {
-    margin: 0;
+    letter-spacing: $nav-title-letter-spacing;
+    text-transform: $nav-title-text-style;
+    font-weight: $nav-title-text-weight;
     padding: 0 1rem;
+    margin: 0;
   }
 
   #nav-links {
@@ -158,14 +172,45 @@ a {
     display: none;
     padding: 0.5rem 0;
     li {
-      letter-spacing: 1px;
+      letter-spacing: $nav-link-letter-spacing;
+      text-transform: $nav-link-text-style;
+      font-weight: $nav-link-text-weight;
       padding: 0 1rem;
     }
+  }
+
+  // here
+  // here
+  // here
+  #test-menu {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 0 1rem;
+    // position: absolute;
+    // right: 0;
+
+    // &::after {
+    //   // content: "aaa";
+    //   content: url("../images/icon-hamburger.svg");
+    //   position: absolute;
+    //   height: 100%;
+    //   width: 100%;
+    //   left: 0;
+    //   top: 0;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
   }
 
   #nav-menu {
     position: absolute;
     right: 0;
+
     &.btn {
       border: solid 2px transparent !important;
       margin: 0 0.25rem;
@@ -177,7 +222,7 @@ a {
 
   @include ccss-on-tablet-and-up {
     &.large {
-      height: $nav-bar-height-large;
+      height: $nav-bar-max-height;
     }
 
     &.stacked {
