@@ -2,4 +2,3 @@ node_modules
 .parcel-cache
 src/images
 src/videos
-dist
