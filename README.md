@@ -5,7 +5,7 @@
 "myplant.com" is a visually captivating landing page about a fictitious plant-related business. The webpage employs a modern and sleek design, utilizing a combination of HTML elements and classes to structure the content and enhance user interaction.
 
 Throughout the webpage, the appropriate use of semantic HTML tags and well-structured classes enhances the accessibility and organization of the content. 
-The styles are from ClusterCSS, a minimal Sass framework developed by myself. Check the cluster-css repo here!
+The styles are from [ClusterCSS](www.google.com), a minimal Sass framework developed by myself.
 
 The header section features a prominent logo and a fixed navigation bar, providing easy access to different sections of the website. The navigation menu collapses into a hamburger icon for mobile devices, ensuring a seamless experience across various screen sizes.
 The main content is divided into several sections, starting with the hero section that showcases a captivating headline and a brief description, creating a strong visual impact. 
