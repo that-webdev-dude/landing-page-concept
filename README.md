@@ -26,7 +26,7 @@ If you find any issues, feel free to submit a pull request.
 
 ## Authors
 
-- **iClusterDev** - _Initial work_ - [iClusterDev](https://github.com/iClusterDev)
+- **Fabio Barracano** - _Initial work_ - [that-webdev-dude](https://github.com/that-webdev-dude)
 
 ## License
 
